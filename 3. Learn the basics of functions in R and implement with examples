@@ -1,0 +1,332 @@
+Question
+1:
+Bank Interest Calculator
+Scenario:
+A bank needs a reusable function to calculate simple interest for different customers.
+Question:
+Write an R function to calculate simple interest and display the result.
+Answer (R Program):
+simple_interest <- function(p, r, t){
+si <- (p * r * t) / 100
+return(si)
+}
+simple_interest(10000, 5, 2)
+ 
+Question
+2:
+Student Result Processing
+Scenario:
+A university wants a function to determine whether a student has passed or failed based on marks.
+Question:
+Write an R function to check the result.
+Answer:
+ 
+check_result <- function(marks){
+if(marks >= 40){
+return("Pass")
+} else {
+return("Fail")
+}
+}
+check_result(65)
+Question
+3:
+Employee Salary Calculation
+Scenario:
+An HR system calculates net salary after deducting tax.
+Question:
+Create an R function to calculate net salary.
+Answer:
+net_salary <- function(basic_salary){
+tax <- basic_salary * 0.10
+net <- basic_salary - tax
+return(net)
+}
+net_salary(30000)
+ 
+Question
+4:
+Electricity Bill Generator
+Scenario:
+Electricity charges depend on units consumed:
+First 100 units → ₹2/unit
+Next 100 units → ₹3/unit
+Above 200 units → ₹5/unit
+Question:
+Write an R function to calculate electricity bill.
+Answer:
+electricity_bill <- function(units){
+if(units <= 100){
+bill <- units * 2
+} else if(units <= 200){
+bill <- (100 * 2) + (units - 100) * 3
+} else {
+bill <- (100 * 2) + (100 * 3) + (units - 200) * 5
+}
+return(bill)
+}
+electricity_bill(250)
+ 
+Question
+5:
+Online Shopping Discount
+Scenario:
+An online store applies a discount:
+20% if amount ≥ ₹5000
+10% if amount ≥ ₹2000
+No discount otherwise
+Question:
+Write an R function to calculate final payable amount.
+Answer:
+final_amount <- function(amount){
+if(amount >= 5000){
+discount <- amount * 0.20
+} else if(amount >= 2000){
+discount <- amount * 0.10
+} else {
+discount <- 0
+}
+return(amount - discount)
+}
+final_amount(4500)
+ 
+Question
+6:
+Temperature Conversion System
+Scenario:
+A weather app converts temperature from Celsius to Fahrenheit.
+Question:
+Write an R function to perform the conversion.
+Answer:
+ 
+celsius_to_fahrenheit <- function(c){
+f <- (c * 9/5) + 32
+return(f)
+}
+celsius_to_fahrenheit(37)
+Question
+7:
+Grading System
+Scenario:
+Grades are assigned using a function:
+≥ 90 → A
+≥ 75 → B
+≥ 50 → C
+< 50 → Fail
+Question:
+Write an R function to assign grade.
+Answer:
+assign_grade <- function(marks){
+if(marks >= 90){
+"A"
+} else if(marks >= 75){
+"B"
+} else if(marks >= 50){
+"C"
+} else {
+"Fail"
+}
+}
+assign_grade(88)
+ 
+Question
+8:
+Voting Eligibility Checker
+Scenario:
+An election system checks whether a person is eligible to vote.
+Question:
+Write an R function to check voting eligibility.
+Answer:
+check_voting <- function(age){
+if(age >= 18){
+return("Eligible to Vote")
+} else {
+return("Not Eligible to Vote")
+}
+}
+check_voting(17)
+ 
+Question
+9:
+Bank Loan EMI Calculator System
+Scenario
+A banking system needs a function to calculate EMI (Equated Monthly Installment) based on:
+Principal amount
+Annual interest rate
+Loan tenure (in years)
+Question
+Write an R function to calculate EMI.
+Answer (R Program)
+calculate_emi <- function(principal, rate, years){
+monthly_rate <- rate / (12 * 100)
+months <- years * 12
+emi <- (principal * monthly_rate * (1 + monthly_rate)^months) /
+((1 + monthly_rate)^months - 1)
+ 
+return(round(emi, 2))
+}
+calculate_emi(500000, 7.5, 10)
+ 
+Question
+10:
+Hospital Patient Billing System
+Scenario
+A hospital calculates total bill using:
+Consultation fee
+Room charges per day
+Number of days
+ 
+5% tax on total amount
+Question
+Create an R function to generate the final bill.
+Answer
+hospital_bill <- function(consultation, room_charge, days){
+subtotal <- consultation + (room_charge * days)
+tax <- subtotal * 0.05
+total <- subtotal + tax
+return(total)
+}
+hospital_bill(500, 2000, 3)
+Question
+11:
+Online Shopping Order Processing System
+Scenario
+An e-commerce platform calculates final order amount based on:
+Total cart value
+Discount (10% if cart ≥ ₹3000)
+Delivery fee (₹0 if cart ≥ ₹5000, else ₹100)
+Question
+Write an R function to compute final payable amount.
+Answer
+order_total <- function(cart_value){
+if(cart_value >= 3000){
+discount <- cart_value * 0.10
+} else {
+discount <- 0
+}
+if(cart_value >= 5000){
+delivery <- 0
+} else {
+delivery <- 100
+}
+final_amount <- cart_value - discount + delivery
+return(final_amount)
+}
+order_total(4200)
+ 
+Question
+12:
+University GPA Calculation System
+Scenario
+A university calculates GPA using marks of 5 subjects:
+Average ≥ 85 → Distinction
+Average ≥ 70 → First Class
+Average ≥ 50 → Second Class
+Else → Fail
+Question
+Write an R function to calculate GPA classification.
+Answer
+calculate_gpa <- function(marks){
+avg <- mean(marks)
+if(avg >= 85){
+result <- "Distinction"
+} else if(avg >= 70){
+result <- "First Class"
+} else if(avg >= 50){
+result <- "Second Class"
+} else {
+result <- "Fail"
+}
+return(result)
+}
+calculate_gpa(c(78, 85, 90, 72, 80))
+ 
+ 
+Question
+13:
+Smart Electricity Meter System
+Scenario
+A smart meter calculates bill based on peak and off-peak usage:
+Peak units → ₹6/unit
+Off-peak units → ₹3/unit
+10% surcharge if total units > 300
+ 
+Question
+Write an R function to calculate electricity bill.
+Answer
+smart_meter_bill <- function(peak_units, offpeak_units){
+bill <- (peak_units * 6) + (offpeak_units * 3)
+total_units <- peak_units + offpeak_units
+ 
+if(total_units > 300){
+bill <- bill * 1.10
+}
+return(bill)
+}
+smart_meter_bill(180, 150)
+Question
+14:
+Insurance Premium Calculation System
+Scenario
+Insurance premium depends on:
+Base premium
+Age > 50 → 20% extra
+Smoker → 30% extra
+Question
+Create an R function to calculate insurance premium.
+Answer
+insurance_premium <- function(base, age, smoker){
+premium <- base
+if(age > 50){
+premium <- premium * 1.20
+}
+if(smoker){
+premium <- premium * 1.30
+}
+return(premium)
+}
+insurance_premium(5000, 55, TRUE)
+ 
+Question
+15:
+Employee Payroll Processing System
+Scenario
+A payroll system calculates:
+HRA = 20% of basic
+DA = 10% of basic
+Tax = 12% of gross salary
+Question
+Write an R function to calculate net salary.
+Answer
+payroll <- function(basic){
+hra <- basic * 0.20
+da <- basic * 0.10
+gross <- basic + hra + da
+tax <- gross * 0.12
+net <- gross - tax
+return(net)
+}
+payroll(40000)
+ 
+Question
+16:
+Smart City Water Usage Monitoring
+Scenario
+Water usage classification:
+≤ 500 litres → Normal
+501 1000 litres → High Usage
+1000 litres → Critical
+Question
+Write an R function to classify water usage.
+Answer
+water_usage_status <- function(litres){
+if(litres <= 500){
+"Normal"
+} else if(litres <= 1000){
+"High Usage"
+} else {
+ 
+"Critical"
+}
+}
+water_usage_status(1200
