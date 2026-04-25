@@ -1,0 +1,165 @@
+Question
+1:
+University Course Enrollment
+Scenario
+A university wants to visualize the number of students enrolled in different departments:
+DepartmentStudents
+CSE 120
+ECE 80
+IT 60
+Mechanical 40
+Tasks
+1. Create a pie chart showing the percentage of students in each department.
+2. Create a bar chart showing the number of students in each department.
+R Program
+# Data
+departments <- c("CSE", "ECE", "IT", "Mechanical")
+students <- c(120, 80, 60, 40)
+# Pie Chart
+pie(
+students,
+labels = departments,
+main = "Student Enrollment per Department",
+col = c("skyblue", "orange", "green", "pink")
+)
+# Bar Chart
+barplot(
+students,
+names.arg = departments,
+main = "Number of Students per Department",
+xlab = "Department",
+ylab = "Number of Students",
+col = c("skyblue", "orange", "green", "pink")
+)
+ 
+Question
+2:
+: Retail Store Sales Distribution
+Scenario
+A retail store wants to visualize sales by category:
+ 
+Category Sales
+Electronics 150000
+Clothing 75000
+Accessories 50000
+Home Appliances25000
+Tasks
+1. Pie chart for sales percentage per category
+2. Bar chart for sales per category
+R Program
+# Data
+category <- c("Electronics", "Clothing", "Accessories", "Home Appliances")
+sales <- c(150000, 75000, 50000, 25000)
+# Pie Chart
+pie(
+sales,
+labels = category,
+main = "Sales Distribution by Category",
+col = rainbow(length(category))
+)
+# Bar Chart
+barplot(
+sales,
+names.arg = category,
+main = "Sales per Category",
+xlab = "Category",
+ylab = "Sales (₹)",
+col = rainbow(length(category))
+)
+Question
+3:
+Online Exam Result Analysis
+Scenario
+An online exam platform wants to visualize the grades of students:
+GradeCount
+A 15
+B 25
+C 30
+D 10
+Tasks
+1. Create a pie chart showing grade distribution
+2. Create a bar chart showing number of students per grade
+R Program
+# Data
+grades <- c("A", "B", "C", "D")
+ 
+count <- c(15, 25, 30, 10)
+# Pie Chart
+pie(
+count,
+labels = grades,
+main = "Grade Distribution",
+col = c("gold", "lightblue", "pink", "lightgreen")
+)
+# Bar Chart
+barplot(
+count,
+names.arg = grades,
+main = "Number of Students per Grade",
+xlab = "Grade",
+ylab = "Number of Students",
+col = c("gold", "lightblue", "pink", "lightgreen")
+)
+Question
+4:
+Company Employee Experience Levels
+Scenario
+A company wants to visualize employee experience levels:
+ExperienceEmployees
+0-2 years 50
+3-5 years 80
+6-10 years 40
+10+ years 30
+R Program
+# Data
+experience <- c("0-2 years", "3-5 years", "6-10 years", "10+ years")
+employees <- c(50, 80, 40, 30)
+ 
+# Pie Chart
+pie(
+employees,
+labels = experience,
+main = "Employee Experience Distribution",
+col = c("skyblue", "orange", "green", "pink")
+)
+ 
+# Bar Chart
+barplot(
+employees,
+names.arg = experience,
+ 
+main = "Number of Employees by Experience",
+xlab = "Experience Level",
+ylab = "Number of Employees",
+col = c("skyblue", "orange", "green", "pink")
+)
+Question
+5:
+Agricultural Crop Production
+Scenario
+A farm wants to visualize production of different crops (in tonnes):
+Crop Production
+Rice 200
+Wheat150
+Maize 100
+Onion50
+R Program
+# Data
+crop <- c("Rice", "Wheat", "Maize", "Onion")
+production <- c(200, 150, 100, 50)
+# Pie Chart
+pie(
+production,
+labels = crop,
+main = "Crop Production Distribution",
+col = c("gold", "green", "orange", "brown")
+)
+# Bar Chart
+barplot(
+production,
+names.arg = crop,
+main = "Crop Production in Tonnes",
+xlab = "Crop",
+ylab = "Production (Tonnes)",
+col = c("gold", "green", "orange", "brown")
+)
