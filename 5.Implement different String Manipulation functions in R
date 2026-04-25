@@ -1,0 +1,219 @@
+Question
+1:
+Employee Name Standardization
+Scenario
+An organization stores employee names in different cases (uppercase, lowercase, mixed).
+The HR system needs to convert all names to uppercase and calculate the length of each name.
+Question
+Write an R program to standardize employee names and find their length.
+Answer
+names <- c("arun", "Bala", "chitra")
+upper_names <- toupper(names)
+name_length <- nchar(upper_names)
+upper_names
+name_length
+ 
+Question
+2:
+Student Email Processing
+Scenario
+A university stores student email IDs.
+The admin wants to extract only the username part (before @) from each email.
+Question
+Write an R program to extract usernames.
+Answer
+emails <- c("arun@gmail.com", "meena@yahoo.com", "ravi@outlook.com")
+usernames <- sub("@.*", "", emails)
+usernames
+ 
+Question
+3:
+Online Form Input Cleanup
+Scenario
+User input from online forms contains extra spaces at the beginning and end.
+The system must clean the input before saving.
+Question
+Write an R program to remove unwanted spaces.
+Answer
+input <- c(" R Programming ", " Data Science ", " AI ")
+clean_input <- trimws(input)
+clean_input
+ 
+Question
+4:
+Product Code Validation
+Scenario
+A store validates product codes that must start with "PRD".
+ 
+Question
+Write an R program to check product code validity.
+Answer
+product_codes <- c("PRD101", "PRD202", "ABC303")
+valid_codes <- startsWith(product_codes, "PRD")
+valid_codes
+Question
+5:
+Text Replacement in Reports
+Scenario
+A report uses the word "error" multiple times.
+The admin wants to replace all occurrences with "issue".
+Question
+Write an R program to replace text.
+Answer
+report <- "error in file, error in system, error occurred"
+updated_report <- gsub("error", "issue", report)
+updated_report
+ 
+Question
+6:
+Password Strength Checker
+Scenario
+A system checks whether a password has at least 8 characters.
+Question
+Write an R program to validate password length.
+Answer
+password <- "secure123"
+if(nchar(password) >= 8){
+print("Strong Password")
+} else {
+print("Weak Password")
+}
+ 
+Question
+7:
+Sentence Word Count
+Scenario
+A content management system needs to count the number of words in a sentence.
+Question
+Write an R program to count words.
+Answer
+sentence <- "R is a powerful programming language"
+word_count <- length(strsplit(sentence, " ")[[1]])
+word_count
+ 
+Question
+8:
+File Extension Extraction
+Scenario
+A system needs to extract file extensions from filenames.
+Question
+Write an R program to extract file extensions.
+Answer
+ 
+files <- c("data.csv", "report.pdf", "image.png")
+extensions <- sub(".*\\.", "", files)
+extensions
+Question
+9:
+Student Name Abbreviation
+Scenario
+The exam system displays student names using the first 3 characters.
+Question
+Write an R program to create name abbreviations.
+Answer
+names <- c("Gayathri", "Karthik", "Anitha")
+abbr <- substr(names, 1, 3)
+abbr
+ 
+Question
+10:
+Search Operation in Text
+Scenario
+A search engine finds names containing the letter "a".
+Question
+Write an R program using pattern matching.
+Answer
+names <- c("Arun", "Bala", "Ravi", "John")
+matched_names <- grep("a", names, value = TRUE)
+matched_names
+ 
+Complex String Cleaning Using Data Frames in R
+Question
+11:
+University Student Data Cleaning System
+A university collects student data from multiple online forms.
+Due to manual entry:
+Names have extra spaces
+Emails are in mixed case
+Department codes are inconsistent (cse, CSE , Cse)
+Email usernames need to be extracted
+Only valid university emails (@univ.edu) should be retained
+Raw Data (Before Cleaning)
+students <- data.frame(
+Name = c(" Gayathri ", "RAVI ", " meena"),
+Email = c("Gayu@UNIV.edu", "ravi@univ.edu", "meena@gmail.com"),
+Department = c(" cse", "ECE ", " Cse ")
+)
+students
+Step-by-Step String Cleaning
+1⃣
+ Remove Extra Spaces (trimws())
+students$Name <- trimws(students$Name)
+students$Department <- trimws(students$Department)
+2⃣
+ Standardize Case (toupper() / tolower())
+students$Name <- toupper(students$Name)
+ 
+students$Email <- tolower(students$Email)
+students$Department <- toupper(students$Department)
+3⃣
+ Extract Email Username (sub())
+students$Username <- sub("@.*", "", students$Email)
+4⃣
+ Validate University Emails (grepl())
+students$ValidEmail <- grepl("@univ.edu$", students$Email)
+5⃣
+ Filter Only Valid Records
+clean_students <- students[students$ValidEmail == TRUE, ]
+clean_students
+Final Cleaned Data Frame
+Name Email DepartmentUsernameValidEmail
+GAYATHRIgayu@univ.eduCSE gayu TRUE
+RAVI ravi@univ.edu ECE ravi TRUE
+Key String Functions Used
+Function Purpose
+trimws() Remove extra spaces
+toupper()Convert to uppercase
+tolower() Convert to lowercase
+sub() Extract username
+grepl() Pattern validation
+[ Filter rows
+Question
+12:
+Product Inventory Text Cleaning
+Scenario
+A store database contains inconsistent product names and categories.
+Goal
+Remove extra spaces
+Convert names to Title Case
+Extract product codes
+Program
+products <- data.frame(
+Product = c(" apple phone ", "SAMSUNG-TV ", " dell laptop"),
+Code = c("PRD-101-APL", "PRD-202-SAM", "PRD-303-DEL")
+)
+products$Product <- trimws(products$Product)
+products$Product <- tools::toTitleCase(tolower(products$Product))
+products$ProductCode <- sub("PRD-[0-9]+-", "", products$Code)
+products
+Output Explanation
+✔ Clean product names
+✔ Extracted product identifiers
+ 
+Question
+13:
+Social Media Comment Moderation System
+Scenario
+A platform wants to detect and replace banned words in user comments.
+Program
+comments <- data.frame(
+User = c("A", "B", "C"),
+Comment = c(
+"This app is bad",
+"Very BAD experience",
+"Not bad at all"
+)
+)
+comments$Comment <- tolower(comments$Comment)
+comments$CleanComment <- gsub("bad", "unacceptable", comments$Comment)
+comments
