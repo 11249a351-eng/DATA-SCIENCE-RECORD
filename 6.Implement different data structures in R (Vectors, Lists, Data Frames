@@ -1,0 +1,191 @@
+Question
+1:
+Student Marks Processing (Vectors)
+Scenario
+A lecturer stores marks of students in a single subject and wants to calculate:
+Total marks
+Average marks
+Highest marks
+Question
+Which data structure is suitable and how is it implemented in R?
+Answer
+Vector is suitable because all values are of the same data type.
+marks <- c(78, 85, 90, 88, 76)
+total <- sum(marks)
+average <- mean(marks)
+highest <- max(marks)
+total
+average
+highest
+ 
+Question
+2:
+Temperature Monitoring System (Vectors)
+Scenario
+A weather station records daily temperatures for a week.
+Answer
+temperature <- c(32, 33, 31, 34, 35, 36, 33)
+ 
+min_temp <- min(temperature)
+max_temp <- max(temperature)
+ 
+min_temp
+ 
+max_temp
+Question
+3:
+Employee Profile Storage (Lists)
+Scenario
+An HR system needs to store mixed data types for an employee:
+Employee ID
+Name
+Salary
+Department
+Question
+Which data structure should be used?
+Answer
+List is suitable because it supports different data types.
+employee <- list(
+ID = 101,
+Name = "Gayathri",
+Salary = 45000,
+Department = "IT"
+)
+employee
+employee$Name
+employee$Salary
+ 
+Question
+4:
+Patient Medical Record System (Lists)
+Scenario
+A hospital stores patient details along with multiple test results.
+Answer
+patient <- list(
+PatientID = 202,
+Name = "Ravi",
+Age = 45,
+TestResults = c(120, 140, 130)
+)
+patient
+patient$TestResults
+ 
+Question
+5:
+College Student Database (Data Frames)
+Scenario
+A college wants to store student information in tabular form:
+Roll number
+Name
+Department
+Marks
+Answer
+Data frame is best for structured tabular data.
+students <- data.frame(
+ 
+RollNo = c(1, 2, 3),
+Name = c("Anitha", "Karthik", "Meena"),
+Dept = c("CSE", "ECE", "IT"),
+Marks = c(85, 78, 92)
+)
+students
+Question
+6:
+Sales Report System (Data Frames)
+Scenario
+A company stores monthly sales data and calculates total sales.
+Answer
+sales <- data.frame(
+Month = c("Jan", "Feb", "Mar"),
+Sales = c(50000, 62000, 58000)
+)
+total_sales <- sum(sales$Sales)
+total_sales
+ 
+Question
+7:
+E-Commerce Order System (Combination of Data Structures)
+Scenario
+An e-commerce system:
+Stores item prices (vector)
+Stores customer details (list)
+Stores order summary (data frame)
+Answer
+prices <- c(1200, 850, 560)
+customer <- list(
+CustomerID = 301,
+Name = "Anjali",
+City = "Chennai"
+)
+orders <- data.frame(
+Item = c("Phone", "Headset", "Charger"),
+Price = prices
+)
+prices
+customer
+orders
+ 
+Question
+8:
+Online Exam System
+Scenario
+An online exam platform:
+Stores marks of each subject (vector)
+Stores student profile (list)
+Stores class results (data frame)
+Answer
+ 
+subject_marks <- c(78, 85, 88)
+student_profile <- list(
+Name = "Arun",
+RollNo = 105,
+Marks = subject_marks
+)
+class_results <- data.frame(
+RollNo = c(101, 102, 103),
+Total = c(240, 255, 270)
+)
+student_profile
+class_results
+Question
+9:
+Bank Account Management
+Scenario
+A bank system stores:
+Daily balances (vector)
+Customer details (list)
+Transaction history (data frame)
+Answer
+balances <- c(5000, 5200, 5100)
+customer <- list(
+AccountNo = 12345,
+Name = "Suresh"
+)
+transactions <- data.frame(
+Date = c("01-01", "02-01", "03-01"),
+Amount = c(-500, 1000, -200)
+)
+balances
+customer
+transactions
+ 
+Question
+10:
+Real-World Summary Question (Exam-Perfect)
+Question
+Explain with an example how vectors, lists, and data frames are used in a real-world application.
+Answer
+Vector stores homogeneous data (marks, prices)
+List stores heterogeneous data (profiles)
+Data Frame stores structured tabular data (records)
+scores <- c(85, 90, 88)
+profile <- list(
+Name = "Gayathri",
+Age = 21,
+Scores = scores
+ 
+)
+records <- data.frame(
+Subject = c("Math", "CS", "Physics"),
+Marks = scores
+)
